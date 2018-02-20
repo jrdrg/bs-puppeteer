@@ -99,6 +99,10 @@ type typeOptions = {. "delay": float};
 [@bs.send.pipe : t]
 external type_ : (string, ~options: typeOptions=?, unit) => Js.Promise.t(unit) =
   "type";
+
+[@bs.send.pipe : t]
+external query : (string) => Js.Promise.t(Js.Nullable.t(ElementHandle.t)) = "$";
+
 /* TODO: the rest of Page */
 /* cookies(...urls: string[]): Promise<Cookie[]>; */
 /*  type 'cookie;
